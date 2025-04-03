@@ -6,39 +6,36 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String email;
-    private ArrayList<Event>reservationList;
+    private ArrayList<Event> reservationList;
 
-
-    public  Customer(String firstName, String lastName, String email, ArrayList<Event>reservationList) {
+    public Customer(String firstName, String lastName, String email, ArrayList<Event> reservationList) {
         setFirstName(firstName);
         setLastName(lastName);
         setEmail(email);
         setReservationList(reservationList);
     }
 
-    public  Customer(String firstName, String lastName,String email) {
-        this(firstName, lastName,email,null);
+    public Customer(String firstName, String lastName, String email) {
+        this(firstName, lastName, email, new ArrayList<>());
     }
 
-
-    public void addReservation(Event event){
+    public void addReservation(Event event) {
         reservationList.add(event);
     }
 
     public void displayReservations() {
-        if(reservationList.isEmpty()){
+        if (reservationList.isEmpty()) {
             System.out.println("No reservations for this event");
-        }else {
-            for(Event event : reservationList){
+        } else {
+            for (Event event : reservationList) {
                 System.out.println(event);
             }
         }
     }
 
-    public void cancelReservation(Event event){
+    public void cancelReservation(Event event) {
         reservationList.remove(event);
     }
-
 
     @Override
     public String toString() {
@@ -81,6 +78,5 @@ public class Customer {
     public void setReservationList(ArrayList<Event> reservationList) {
         this.reservationList = reservationList;
     }
-
 
 }

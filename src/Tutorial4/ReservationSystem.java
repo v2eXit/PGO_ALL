@@ -24,8 +24,8 @@ public class ReservationSystem {
         this.customers.add(customer);
     }
 
-    public void addCustomer(String firstName, String lastName) {
-        Customer customer = new Customer(firstName, lastName);
+    public void addCustomer(String firstName, String lastName, String email) {
+        Customer customer = new Customer(firstName, lastName, email);
         this.customers.add(customer);
     }
 
